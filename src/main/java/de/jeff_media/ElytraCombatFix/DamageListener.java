@@ -71,10 +71,12 @@ public class DamageListener implements Listener {
     }
 
     private void giveAllSeizedItemsBack(Player player) {
+        System.out.println("Giving back "+getSeizedItems(player).size());
         for(ItemStack item : getSeizedItems(player)) {
             giveOrDrop(player,item);
         }
         getSeizedItems(player).clear();
+        System.out.println("Still left "+getSeizedItems(player).size());
     }
 
     private @NotNull ArrayList<ItemStack> getSeizedItems(Player player) {
@@ -101,7 +103,7 @@ public class DamageListener implements Listener {
         }
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(main, () -> {
-            if(!getSeizedItems(player).contains(item)) {
+            if(getSeizedItems(player).contains(item)) {
                 giveOrDrop(player, item);
                 getSeizedItems(player).remove(item);
                 if (main.getConfig().getBoolean(Config.SHOW_ACTIONBAR_MESSAGE)) {
