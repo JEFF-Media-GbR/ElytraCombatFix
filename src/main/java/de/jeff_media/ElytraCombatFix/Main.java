@@ -1,10 +1,9 @@
-package de.jeff_media.PluginName;
+package de.jeff_media.ElytraCombatFix;
 
-import de.jeff_media.PluginName.commands.MainCommand;
+import de.jeff_media.ElytraCombatFix.commands.MainCommand;
 import de.jeff_media.PluginUpdateChecker.PluginUpdateChecker;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {

@@ -1,4 +1,4 @@
-package de.jeff_media.PluginName;
+package de.jeff_media.ElytraCombatFix;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -11,7 +11,6 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -75,6 +74,7 @@ public class DamageListener implements Listener {
         for(ItemStack item : getSeizedItems(player)) {
             giveOrDrop(player,item);
         }
+        getSeizedItems(player).clear();
     }
 
     private @NotNull ArrayList<ItemStack> getSeizedItems(Player player) {
@@ -93,9 +93,11 @@ public class DamageListener implements Listener {
 
     private void seizeAndScheduleRefund(Player player, ItemStack item) {
         storeSeizedItem(player,item);
-        player.getInventory().remove(item);
+        player.getInventory().setChestplate(null);
         if(main.getConfig().getBoolean(Config.SHOW_ACTIONBAR_MESSAGE)) {
-            Messages.showActionBarMessage(player,main.messages.SEIZED);
+            Messages.showActionBarMessage(player,main.messages.SEIZED
+                    .replaceAll("\\{time}",
+                            String.valueOf(main.getConfig().getDouble(Config.TIME))));
         }
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(main, () -> {

@@ -12,7 +12,8 @@ load: POSTWORLD
 softdepend: []
 
 permissions:
-  elytracombatfix.reload: Allows to reload the config file
+  elytracombatfix.reload:
+    description: Allows to reload the config file
 
 commands:
   elytracombatfix:

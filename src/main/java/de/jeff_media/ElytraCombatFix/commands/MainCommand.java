@@ -1,6 +1,6 @@
-package de.jeff_media.PluginName.commands;
+package de.jeff_media.ElytraCombatFix.commands;
 
-import de.jeff_media.PluginName.Main;
+import de.jeff_media.ElytraCombatFix.Main;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
