@@ -11,6 +11,7 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -42,12 +43,12 @@ public class DamageListener implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerDeath(PlayerDeathEvent playerDeathEvent) {
-        giveAllSeizedItemsBack(playerDeathEvent.getEntity());
+        giveAllSeizedItemsBack(playerDeathEvent.getEntity(),playerDeathEvent);
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerQuit(PlayerQuitEvent playerQuitEvent) {
-        giveAllSeizedItemsBack(playerQuitEvent.getPlayer());
+        giveAllSeizedItemsBack(playerQuitEvent.getPlayer(),null);
     }
 
     private boolean isDamageTypeEnabled(EntityDamageEvent.DamageCause cause) {
@@ -70,13 +71,15 @@ public class DamageListener implements Listener {
         }
     }
 
-    private void giveAllSeizedItemsBack(Player player) {
-        System.out.println("Giving back "+getSeizedItems(player).size());
+    private void giveAllSeizedItemsBack(Player player, @Nullable PlayerDeathEvent playerDeathEvent) {
         for(ItemStack item : getSeizedItems(player)) {
             giveOrDrop(player,item);
+            if(playerDeathEvent!=null) {
+                playerDeathEvent.getDrops().add(item);
+            }
         }
         getSeizedItems(player).clear();
-        System.out.println("Still left "+getSeizedItems(player).size());
+
     }
 
     private @NotNull ArrayList<ItemStack> getSeizedItems(Player player) {
