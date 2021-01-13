@@ -101,10 +101,12 @@ public class DamageListener implements Listener {
         }
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(main, () -> {
-            giveOrDrop(player,item);
-            getSeizedItems(player).remove(item);
-            if(main.getConfig().getBoolean(Config.SHOW_ACTIONBAR_MESSAGE)) {
-                Messages.showActionBarMessage(player,main.messages.RETURNED);
+            if(!getSeizedItems(player).contains(item)) {
+                giveOrDrop(player, item);
+                getSeizedItems(player).remove(item);
+                if (main.getConfig().getBoolean(Config.SHOW_ACTIONBAR_MESSAGE)) {
+                    Messages.showActionBarMessage(player, main.messages.RETURNED);
+                }
             }
         }, (long) (main.getConfig().getDouble("time")*20L));
     }
