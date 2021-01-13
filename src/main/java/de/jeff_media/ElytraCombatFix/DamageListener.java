@@ -52,12 +52,7 @@ public class DamageListener implements Listener {
     }
 
     private boolean isDamageTypeEnabled(EntityDamageEvent.DamageCause cause) {
-        for(String entry : main.getConfig().getStringList(Config.DAMAGE_TYPES)) {
-            if(entry.equalsIgnoreCase(cause.name())) {
-                return true;
-            }
-        }
-        return false;
+        return main.getConfig().getBoolean(String.format(Config.DAMAGE_TYPES_ENTRY,cause.name()),true);
     }
 
     private void storeSeizedItem(Player player, ItemStack item) {

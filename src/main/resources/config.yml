@@ -19,36 +19,36 @@ message-seized: "&cYour elytra has been seized for {time} seconds!"
 message-returned: "&aYour elytra has been returned!"
 
 # You can set what damage types trigger the removal of the elytra.
-# By default, all damage types are enabled.
 damage-types:
-  - BLOCK_EXPLOSION
-  - CONTACT
-  - CRAMMING
-  - CUSTOM
-  - DRAGON_BREATH
-  - DROWNING
-  - DRYOUT
-  - ENTITY_ATTACK
-  - ENTITY_EXPLOSION
-  - ENTITY_SWEEP_ATTACK
-  - FALL
-  - FALLING_BLOCK
-  - FIRE
-  - FIRE_TICK
-  - FLY_INTO_WALL
-  - HOT_FLOOR
-  - LAVA
-  - LIGHTNING
-  - MAGIC
-  - MELTING
-  - POISON
-  - PROJECTILE
-  - STARVATION
-  - SUFFOCATION
-  - SUICIDE
-  - THORNS
-  - VOID
-  - WITHER
+  BLOCK_EXPLOSION: true
+  CONTACT: false
+  CRAMMING: false
+  CUSTOM: true
+  DRAGON_BREATH: true
+  DROWNING: false
+  DRYOUT: true
+  ENTITY_ATTACK: true
+  ENTITY_EXPLOSION: true
+  ENTITY_SWEEP_ATTACK: true
+  FALL: false
+  FALLING_BLOCK: false
+  FIRE: false
+  FIRE_TICK: false
+  FLY_INTO_WALL: true
+  HOT_FLOOR: false
+  LAVA: false
+  LIGHTNING: true
+  MAGIC: true
+  MELTING: true
+  POISON: true
+  PROJECTILE: true
+  STARVATION: false
+  SUFFOCATION: false
+  SUICIDE: false
+  THORNS: true
+  VOID: true
+  WITHER: true
+
 
 ##########################
 ##### Update Checker #####

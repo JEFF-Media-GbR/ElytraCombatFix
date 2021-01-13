@@ -42,7 +42,6 @@ public class Main extends JavaPlugin {
         getConfig().addDefault(Config.CHECK_FOR_UPDATES_INTERVAL, 4);
         getConfig().addDefault(Config.TIME,5.0D);
         getConfig().addDefault(Config.SHOW_ACTIONBAR_MESSAGE, true);
-        getConfig().addDefault(Config.DAMAGE_TYPES,ConfigUtils.getAllDamageTypes());
     }
 
     private void registerMetrics() {
