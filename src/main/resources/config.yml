@@ -1,10 +1,54 @@
 ##########################
-#####   PluginName   #####
+#### ElytraCombatFix #####
 ##########################
 
 # Permissions:
 
 # Commands:
+
+##########################
+##### Configuration  #####
+##########################
+
+# Amount of seconds that the elytra will be removed.
+time: 5
+
+show-actionbar-message: true
+
+message-seized: "&cYour elytra has been seized for {time} seconds!"
+message-returned: "&aYour elytra has been returned!"
+
+# You can set what damage types trigger the removal of the elytra.
+# By default, all damage types are enabled.
+damage-types:
+  - BLOCK_EXPLOSION
+  - CONTACT
+  - CRAMMING
+  - CUSTOM
+  - DRAGON_BREATH
+  - DROWNING
+  - DRYOUT
+  - ENTITY_ATTACK
+  - ENTITY_EXPLOSION
+  - ENTITY_SWEEP_ATTACK
+  - FALL
+  - FALLING_BLOCK
+  - FIRE
+  - FIRE_TICK
+  - FLY_INTO_WALL
+  - HOT_FLOOR
+  - LAVA
+  - LIGHTNING
+  - MAGIC
+  - MELTING
+  - POISON
+  - PROJECTILE
+  - STARVATION
+  - SUFFOCATION
+  - SUICIDE
+  - THORNS
+  - VOID
+  - WITHER
 
 ##########################
 ##### Update Checker #####

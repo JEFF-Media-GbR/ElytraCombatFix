@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.jeff_media</groupId>
-    <name>PluginName</name>
+    <name>ElytraCombatFix</name>
     <version>1.0.0</version>
     <artifactId>${name}</artifactId>
 
     <properties>
-        <spigot.description>This plugin does awesome things.</spigot.description>
+        <spigot.description>Temporarily removes your elytra when taking damage.</spigot.description>
         <spigot.website>https://www.spigotmc.org/resources/authors/mfnalex.175238/</spigot.website>
         <spigot.prefix>${name}</spigot.prefix>
         <spigot.main>${groupId}.${name}.Main</spigot.main>
